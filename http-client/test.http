@@ -1,0 +1,9 @@
+POST http://localhost:3030/users
+Content-Type: application/json
+
+{
+  "email": "hello@feathersjs.com",
+  "password": "supersecret"
+}
+
+###
