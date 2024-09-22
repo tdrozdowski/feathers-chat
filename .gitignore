@@ -121,3 +121,5 @@ dist
 lib/
 .idea/
 data/
+
+config/default.json

@@ -7,3 +7,32 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:3030/authentication
+Content-Type: application/json
+
+{
+  "strategy": "local",
+  "email": "hello@feathersjs.com",
+  "password": "supersecret"
+}
+
+> {%
+     client.global.set("access_token", response.body.accessToken);
+ %}
+
+###
+# curl 'http://localhost:3030/messages/'
+#  -H 'Content-Type: application/json'
+#  -H 'Authorization: Bearer <accessToken>'
+#  --data-binary '{ "text": "Hello from the console" }'
+POST http://localhost:3030/messages/
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+  "text": "Hello from the console"
+}
+
+###
+
