@@ -23,7 +23,7 @@ export type Message = Static<typeof messageSchema>
 export const messageValidator = getValidator(messageSchema, dataValidator)
 export const messageResolver = resolve<Message, HookContext>({
   user: virtual(async (message, context) => {
-    return context.app.service('users').get(message.id)
+    return context.app.service('users').get(message.userId)
   })
 })
 

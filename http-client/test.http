@@ -36,3 +36,8 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3030/messages
+Authorization: Bearer {{access_token}}
+
+###
+
